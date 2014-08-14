@@ -130,6 +130,9 @@ BOARD_SEPOLICY_UNION := \
        app.te \
        file_contexts
 
+# Use HW crypto for ODE
+TARGET_HW_DISK_ENCRYPTION := true
+
 # QCOM PowerHAL
 TARGET_POWERHAL_VARIANT := qcom
 
