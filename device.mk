@@ -125,6 +125,8 @@ PRODUCT_PACKAGES += \
     libOmxVenc
 
 PRODUCT_PACKAGES += \
+    audiod \
+    audio_policy.msm8974 \
     audio.primary.msm8974 \
     audio.a2dp.default \
     audio.usb.default \

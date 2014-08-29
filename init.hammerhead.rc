@@ -489,6 +489,11 @@ service thermal-engine /system/bin/thermal-engine-hh
    user root
    group root
 
+service audiod /system/bin/audiod
+   class late_start
+   user system
+   group system
+
 service vss_init /vendor/bin/vss_init
     class late_start
     user root
