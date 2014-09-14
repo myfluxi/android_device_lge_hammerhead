@@ -73,11 +73,16 @@ DEVICE_PACKAGE_OVERLAYS := vendor/$VENDOR/$DEVICE/overlay
 # Apps
 PRODUCT_PACKAGES += \\
     OmaDmclient \\
+    PPPreference \\
     qcrilmsgtunnel \\
     SprintHiddenMenu \\
     shutdownlistener \\
     TimeService \\
     UpdateSetting
+
+# Media
+PRODUCT_PACKAGES += \\
+    libmm-abl
 
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF
@@ -125,6 +130,16 @@ ifeq (\$(TARGET_DEVICE),hammerhead)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := OmaDmclient
+LOCAL_MODULE_OWNER := lge
+LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := PPPreference
 LOCAL_MODULE_OWNER := lge
 LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
