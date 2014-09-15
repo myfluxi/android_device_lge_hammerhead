@@ -82,6 +82,7 @@ PRODUCT_PACKAGES += \\
 
 # Media
 PRODUCT_PACKAGES += \\
+    libHevcSwDecoder \\
     libmm-abl
 
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
