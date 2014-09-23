@@ -303,7 +303,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     av.offload.enable=true \
     av.streaming.offload.enable=true \
     audio.offload.pcm.enable=true \
-    audio.offload.24bit.enable=1
+    audio.offload.24bit.enable=1 \
+    qcom.hw.aac.encoder=true
 
 # Setup custom emergency number list based on the MCC. This is needed by RIL
 PRODUCT_PROPERTY_OVERRIDES += \
