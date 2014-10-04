@@ -490,7 +490,7 @@ service ssr_ramdump /system/bin/subsystem_ramdump -m -t emmc
 service thermal-engine /system/bin/thermal-engine
    class main
    user root
-   group radio system
+   group root
 
 service audiod /system/bin/audiod
    class late_start
