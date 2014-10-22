@@ -25,16 +25,34 @@
 <!-- OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN -->
 <!-- IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.                          -->
 <audio_platform_info>
+    <acdb_ids>
+        <!-- Output devices -->
+        <device name="SND_DEVICE_OUT_HANDSET" acdb_id="7" />
+        <device name="SND_DEVICE_OUT_SPEAKER" acdb_id="15" />
+        <device name="SND_DEVICE_OUT_HEADPHONES" acdb_id="10" />
+        <device name="SND_DEVICE_OUT_VOICE_HANDSET" acdb_id="7" />
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" acdb_id="15" />
+        <device name="SND_DEVICE_OUT_VOICE_HEADPHONES" acdb_id="10" />
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_HDMI" acdb_id="15" />
 
-    <!-- Output devices -->
-    <device name="SND_DEVICE_OUT_SPEAKER" acdb_id="15" />
-    <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" acdb_id="15" />
-    <device name="SND_DEVICE_OUT_VOICE_SPEAKER" acdb_id="15" />
+        <!-- Input devices -->
+        <device name="SND_DEVICE_IN_HANDSET_MIC" acdb_id="4" />
+        <device name="SND_DEVICE_IN_SPEAKER_MIC" acdb_id="4" />
+        <device name="SND_DEVICE_IN_HEADSET_MIC" acdb_id="8" />
+        <device name="SND_DEVICE_IN_HANDSET_DMIC" acdb_id="4" />
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC" acdb_id="11" />
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="35" />
+    </acdb_ids>
 
-    <!-- Input devices -->
-    <device name="SND_DEVICE_IN_HANDSET_DMIC" acdb_id="4" />
-    <device name="SND_DEVICE_IN_SPEAKER_DMIC" acdb_id="11" />
-    <device name="SND_DEVICE_IN_CAMCORDER_MIC" acdb_id="62" />
-    <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" acdb_id="11" />
+    <backend_names>
+        <!-- empty -->
+    </backend_names>
 
+    <pcm_ids>
+        <!-- empty -->
+    </pcm_ids>
+
+    <device_names>
+        <!-- empty -->
+    </device_names>
 </audio_platform_info>
