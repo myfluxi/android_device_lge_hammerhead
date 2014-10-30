@@ -72,12 +72,17 @@ DEVICE_PACKAGE_OVERLAYS := vendor/$VENDOR/$DEVICE/overlay
 
 # Apps
 PRODUCT_PACKAGES += \\
+    AudioFX \\
     OmaDmclient \\
     qcrilmsgtunnel \\
     SprintHiddenMenu \\
     shutdownlistener \\
     TimeService \\
     UpdateSetting
+
+# Audio
+PRODUCT_PACKAGES += \\
+    libqct_resampler
 
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF
@@ -124,8 +129,28 @@ LOCAL_PATH := \$(call my-dir)
 ifeq (\$(TARGET_DEVICE),hammerhead)
 
 include \$(CLEAR_VARS)
+LOCAL_MODULE := AudioFX
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_MODULE_TAGS := optional
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libqct_resampler
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := vendor/lib/\$(LOCAL_MODULE).so
+LOCAL_MODULE_PATH := \$(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
 LOCAL_MODULE := OmaDmclient
-LOCAL_MODULE_OWNER := lge
+LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
@@ -135,7 +160,7 @@ include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := qcrilmsgtunnel
-LOCAL_MODULE_OWNER := lge
+LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
@@ -145,7 +170,7 @@ include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := SprintHiddenMenu
-LOCAL_MODULE_OWNER := lge
+LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
@@ -155,7 +180,7 @@ include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := shutdownlistener
-LOCAL_MODULE_OWNER := lge
+LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
@@ -165,7 +190,7 @@ include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := TimeService
-LOCAL_MODULE_OWNER := lge
+LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
@@ -175,7 +200,7 @@ include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := UpdateSetting
-LOCAL_MODULE_OWNER := lge
+LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := app/\$(LOCAL_MODULE).apk
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
