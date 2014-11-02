@@ -294,6 +294,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Audio Configuration
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
+    mm.enable.qcom_parser=3183219 \
     mm.enable.smoothstreaming=true \
     ro.qc.sdk.audio.fluencetype=fluence \
     persist.audio.fluence.voicecall=true \
