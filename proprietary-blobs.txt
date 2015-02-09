@@ -56,6 +56,9 @@
 /system/etc/permissions/serviceitems.xml
 /system/etc/qcril.db
 /system/etc/sensor_def_hh.conf
+/system/etc/wifi/bcmdhd_apsta.bin
+/system/etc/wifi/bcmdhd_mfg.bin
+/system/etc/wifi/bcmdhd_sta.bin
 /system/framework/qcrilhook.jar
 /system/framework/serviceitems.jar
 /system/lib/hw/flp.msm8974.so
